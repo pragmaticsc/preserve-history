@@ -1,34 +1,34 @@
-# Preserving Historical Media with Cryptographic Signatures
+# Preserving Historical Media with Quantum-Resistant Signatures and Timestamps
 
-**Protecting Authentic Records in an Era of AI-Generated Content**
+**Safeguarding Authentic Records Against AI-Generated Distortion**
 
 ## Problem
-Advancements in AI enable the creation of indistinguishable deepfakes and fabricated media, posing a significant risk to historical accuracy. Without verifiable archives, future generations may struggle to discern authentic records from manipulated or AI-generated content, eroding trust in historical data.
+Advancements in AI enable hyper-realistic deepfakes and fabricated media, threatening historical accuracy. Quantum computers could further compromise traditional cryptographic signatures, risking the integrity of digital archives. Without verifiable, quantum-resistant records, future generations may lose trust in historical data.
 
 ## Solution
-We propose a **cryptographically signed archive** of historical media (videos, images, texts) to ensure authenticity and provenance. The system:
-- Downloads media (e.g., MP4s from YouTube) using automated scripts (Ruby, `yt-dlp`).
-- Stores files in cloud storage (Cloudflare R2) and metadata in a SQLite database.
-- Generates SHA-256 hashes of media files and signs them with RSA or ECDSA private keys.
-- Optionally integrates trusted timestamping (e.g., via a Timestamping Authority or blockchain).
-- Uploads signed files to a dedicated S3 bucket, enabling public verification with the corresponding public key.
+We propose a **quantum-resistant archive** for historical media (e.g., YouTube videos) to ensure authenticity and provenance. The system:
+- Downloads videos using automated scripts (Ruby, `yt-dlp`).
+- Stores files in Cloudflare R2 and metadata in SQLite.
+- Signs files with ML-DSA (CRYSTALS-Dilithium), a NIST-standardized, quantum-resistant algorithm using SHA-256.
+- Timestamps hashes with OpenTimestamps (OTS), leveraging Bitcoin’s blockchain for free, tamper-proof records.
+- Uploads signed files and OTS proofs to a verifiable R2 bucket.
 
-This creates a tamper-proof archive where files can be verified for integrity and tied to a specific date, mitigating the risk of AI-driven historical distortion.
+This creates a secure archive where files are protected against tampering and quantum attacks, with timestamps bound to the Bitcoin blockchain.
 
 ## Significance
-- **Integrity**: Cryptographic signatures (e.g., RSA-PSS, SHA-256) ensure media files remain unaltered.
-- **Provenance**: Timestamps link files to their creation or archival date, establishing historical context.
-- **Scalability**: Built with open-source tools (Python, AWS, SQLite), the system is extensible and cost-effective.
-- **Open Access**: Publicly verifiable signatures empower researchers, historians, and the public to trust archived media.
-- **Future-Proofing**: Preserves authentic records for posterity in an AI-dominated content landscape.
+- **Quantum Resistance**: ML-DSA signatures and SHA-256 hashing ensure security against future quantum computers.
+- **Tamper-Proof Timestamps**: OTS uses Bitcoin’s immutable ledger, providing verifiable signing dates at no cost.
+- **Cost-Effective**: Free timestamping via OTS and low-cost R2 storage (~$0.015/GB/month) make the system scalable.
+- **Public Verifiability**: Open-source tools and public keys enable anyone to verify file integrity and timestamps.
+- **Historical Preservation**: Protects authentic media for researchers and historians in an AI-driven world.
 
 ## Call to Action
-We seek contributors to build and scale this open-source project. Roles include:
-- **Developers**: Enhance scripts for media ingestion, signing, and verification (Python, AWS SDK).
-- **Archivists**: Curate historically significant media and define metadata standards.
-- **Cryptographers**: Integrate trusted timestamping (TSA, blockchain) and optimize signing workflows.
-- **Advocates**: Promote adoption among academic, archival, and tech communities.
+Join our open-source effort to build a future-proof media archive. We need:
+- **Developers**: Enhance Ruby scripts for signing, timestamping, and verification.
+- **Archivists**: Curate significant media and define metadata standards.
+- **Cryptographers**: Optimize ML-DSA and OTS integration for performance and security.
+- **Advocates**: Promote adoption in academic and tech communities.
 
-Join us at `preservehistory@example.com` or contribute on [GitHub](https://github.com/preserve-history). Let’s secure history with verifiable, tamper-proof archives.
+Contribute at [GitHub](https://github.com/preserve-history/historical-media-archive) or contact `preservehistory@example.com`. Help secure history with quantum-safe, verifiable archives.
 
-*Initiated May 25, 2025*
+*Initiated: May 25, 2025*
